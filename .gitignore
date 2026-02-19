@@ -8,7 +8,7 @@ __pycache__/
 # Environment files
 .env
 
-images/
+#images/
 attendance.csv
 
 # OS junk
