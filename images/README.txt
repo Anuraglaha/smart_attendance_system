@@ -1,1 +1,0 @@
-Place training images in this folder
