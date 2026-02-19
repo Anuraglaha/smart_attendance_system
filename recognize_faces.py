@@ -2,6 +2,7 @@ import cv2
 import face_recognition
 import os
 import numpy as np
+from attendance_system import markAttendance
 
 # ===== LOAD KNOWN IMAGES =====
 
@@ -77,12 +78,21 @@ while True:
 
         matchIndex = np.argmin(faceDis)
 
-
+        '''
         if matches[matchIndex]:
             name = classNames[matchIndex].upper()
         else:
             name = "UNKNOWN"
+        '''
 
+        if matches[matchIndex]:
+            name = classNames[matchIndex].upper()
+
+            # Mark attendance automatically
+            markAttendance(name)
+
+        else:
+            name = "UNKNOWN"
 
         # Scale coordinates back
         y1, x2, y2, x1 = faceLoc

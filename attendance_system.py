@@ -8,7 +8,7 @@ def markAttendance(name):
     try:
         with open(file_path, "r") as f:
             reader = csv.reader(f)
-            names = [row[0] for row in reader]
+            names = [row[0] for row in reader if len(row) > 0]
     except FileNotFoundError:
         names = []
 
