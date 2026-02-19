@@ -8,6 +8,9 @@ __pycache__/
 # Environment files
 .env
 
+images/
+attendance.csv
+
 # OS junk
 .DS_Store
 Thumbs.db
