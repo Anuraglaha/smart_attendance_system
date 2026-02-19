@@ -8,7 +8,11 @@ __pycache__/
 # Environment files
 .env
 
-#images/
+images/*
+!images/.gitkeep
+!images/README.txt
+
+
 attendance.csv
 
 # OS junk
