@@ -12,6 +12,9 @@ path = "images"
 images = []
 classNames = []
 
+'''
+#SINCE I ADDED README FILE I NEED TO CHANGE THIS
+
 for file in os.listdir(path):
     img_path = os.path.join(path, file)
     img = face_recognition.load_image_file(img_path)
@@ -21,8 +24,23 @@ for file in os.listdir(path):
     name = os.path.splitext(file)[0].split("_")[0]
 
     classNames.append(name)
+'''
 
-print("Known people:", classNames)
+for file in os.listdir(path):
+
+    # Skip non-image files
+    if not file.lower().endswith(('.png', '.jpg', '.jpeg')):
+        continue
+
+    img_path = os.path.join(path, file)
+    img = face_recognition.load_image_file(img_path)
+
+    images.append(img)
+
+    # Extract name before underscore
+    name = os.path.splitext(file)[0].split("_")[0]
+
+    classNames.append(name)
 
 
 # ===== ENCODE KNOWN FACES =====
@@ -79,13 +97,6 @@ while True:
         )
 
         matchIndex = np.argmin(faceDis)
-
-        '''
-        if matches[matchIndex]:
-            name = classNames[matchIndex].upper()
-        else:
-            name = "UNKNOWN"
-        '''
 
         if matches[matchIndex]:
             name = classNames[matchIndex].upper()
