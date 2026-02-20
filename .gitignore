@@ -13,8 +13,8 @@ images/*
 !images/README.txt
 
 attendance.db
-
 attendance.csv
+gui_test.py
 
 # OS junk
 .DS_Store
