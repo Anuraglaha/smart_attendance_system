@@ -2,7 +2,9 @@ import cv2
 import face_recognition
 import os
 import numpy as np
-from attendance_system import markAttendance
+#from attendance_system import markAttendance
+from database import markAttendanceDB
+
 
 # ===== LOAD KNOWN IMAGES =====
 
@@ -88,8 +90,8 @@ while True:
         if matches[matchIndex]:
             name = classNames[matchIndex].upper()
 
-            # Mark attendance automatically
-            markAttendance(name)
+            # Mark attendance in Db
+            markAttendanceDB(name)
 
         else:
             name = "UNKNOWN"

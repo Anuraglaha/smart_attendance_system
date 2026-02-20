@@ -12,7 +12,7 @@ images/*
 !images/.gitkeep
 !images/README.txt
 
-attendence.db
+attendance.db
 
 attendance.csv
 
