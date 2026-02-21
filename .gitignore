@@ -19,3 +19,13 @@ gui_test.py
 # OS junk
 .DS_Store
 Thumbs.db
+
+# ===============================
+# Build / EXE files (PyInstaller)
+# ===============================
+build/
+dist/
+*.spec
+
+# Executables
+*.exe
