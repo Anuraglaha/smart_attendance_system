@@ -26,6 +26,6 @@ Thumbs.db
 build/
 dist/
 *.spec
-
+models/
 # Executables
 *.exe
