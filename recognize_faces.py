@@ -6,8 +6,7 @@ import numpy as np
 from database import markAttendanceDB
 
 
-def run_attendance():
-
+def run_attendance(is_running, on_marked):
     # ===== LOAD KNOWN IMAGES =====
     path = "images"
     images = []
@@ -50,7 +49,7 @@ def run_attendance():
     # ===== START WEBCAM =====
     cap = cv2.VideoCapture(0)
 
-    while True:
+    while is_running():
         success, img = cap.read()
 
         imgSmall = cv2.resize(img, (0, 0), None, 0.25, 0.25)
@@ -76,6 +75,7 @@ def run_attendance():
             if matches[matchIndex]:
                 name = classNames[matchIndex].upper()
                 markAttendanceDB(name)
+                on_marked(name)
             else:
                 name = "UNKNOWN"
 
