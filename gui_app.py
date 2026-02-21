@@ -9,6 +9,7 @@ ctk.set_default_color_theme("blue") # Theme color
 
 # ---------- Main Window ----------
 app = ctk.CTk()
+app.iconbitmap("app_icon.ico")
 app.title("Smart Attendance System")
 app.geometry("500x400")  # Width x Height
 
